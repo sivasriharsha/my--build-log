@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Split — an expense splitter</title>
+<link rel="stylesheet" href="sub-project-1-expense-splitter/style.css">
+</head>
+<body>
+
+<main class="receipt">
+  <header class="receipt__head">
+    <p class="receipt__eyebrow">* * * SPLIT * * *</p>
+    <h1 class="receipt__title">Expense Splitter</h1>
+    <p class="receipt__sub">even splits, no awkward math</p>
+    <div class="receipt__barcode" aria-hidden="true"></div>
+  </header>
+
+  <section class="receipt__section" aria-labelledby="people-heading">
+    <p class="receipt__label" id="people-heading">WHO'S SPLITTING</p>
+    <form id="person-form" class="row-form">
+      <input id="person-input" type="text" placeholder="Add a name…" autocomplete="off" required>
+      <button type="submit" class="btn btn--add">+ ADD</button>
+    </form>
+    <ul id="people-list" class="tag-list"></ul>
+  </section>
+
+  <div class="tear" aria-hidden="true"></div>
+
+  <section class="receipt__section" aria-labelledby="expense-heading">
+    <p class="receipt__label" id="expense-heading">ITEMS</p>
+    <form id="expense-form" class="expense-form">
+      <input id="expense-name" type="text" placeholder="What was it?" autocomplete="off" required>
+      <input id="expense-amount" type="number" step="0.01" min="0" placeholder="0.00" required>
+      <select id="expense-payer" required></select>
+      <button type="submit" class="btn btn--add">+ ADD ITEM</button>
+    </form>
+    <ul id="expense-list" class="expense-list"></ul>
+  </section>
+
+  <div class="tear" aria-hidden="true"></div>
+
+  <section class="receipt__section" aria-labelledby="total-heading">
+    <p class="receipt__label" id="total-heading">TOTAL</p>
+    <p class="receipt__total" id="total-amount">$0.00</p>
+    <p class="receipt__label" style="margin-top:1.25rem;">SETTLE UP</p>
+    <ul id="settle-list" class="settle-list">
+      <li class="settle-empty">Add people and items to see who owes what.</li>
+    </ul>
+  </section>
+
+  <footer class="receipt__foot">
+    <p>THANK YOU FOR SPLITTING FAIRLY</p>
+    <p class="receipt__snip">✂ - - - - - - - - - - - - - - - - - - - - - - - -</p>
+  </footer>
+</main>
+
+<script src="sub-project-1-expense-splitter/script.js"></script>
+</body>
+</html>
