@@ -70,3 +70,56 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    gap: 1rem;
+  }
+  a.project-link:hover .project-info h2 { text-decoration: underline; }
+  footer {
+    margin-top: 2rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">* * * BUILD LOG * * *</p>
+  <h1>Hi, I'm building things.</h1>
+  <p class="intro">
+    Learning to code by shipping small, real projects instead of just doing tutorials.
+    Each one below is finished and usable — click in to try it.
+  </p>
+
+  <div class="project">
+    <a class="project-link" href="./sub-project-1-expense-splitter/index.html">
+      <div class="project-info">
+        <h2>Expense Splitter</h2>
+        <p>Split shared costs and see who owes who, with the fewest payments possible.</p>
+        <p style="margin-top: 0.35rem; font-style: italic;">Feedback and suggestions on this project are welcome.</p>
+      </div>
+      <span class="status status--live">LIVE →</span>
+    </a>
+  </div>
+
+  <div class="project">
+    <div class="project-info">
+      <h2>Notes App</h2>
+      <p>Saves data via an API — coming next.</p>
+    </div>
+    <span class="status status--planned">PLANNED</span>
+  </div>
+
+  <div class="project">
+    <div class="project-info">
+      <h2>Flagship Project</h2>
+      <p>A polished, sellable product — TBD.</p>
+    </div>
+    <span class="status status--planned">PLANNED</span>
+  </div>
+
+  <footer>MORE PROJECTS ADDED AS THEY SHIP</footer>
+</main>
+</body>
+</html>
