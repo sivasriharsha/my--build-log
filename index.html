@@ -3,58 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Split — an expense splitter</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<main class="receipt">
-  <header class="receipt__head">
-    <p class="receipt__eyebrow">* * * SPLIT * * *</p>
-    <h1 class="receipt__title">Expense Splitter</h1>
-    <p class="receipt__sub">even splits, no awkward math</p>
-    <div class="receipt__barcode" aria-hidden="true"></div>
-  </header>
-
-  <section class="receipt__section" aria-labelledby="people-heading">
-    <p class="receipt__label" id="people-heading">WHO'S SPLITTING</p>
-    <form id="person-form" class="row-form">
-      <input id="person-input" type="text" placeholder="Add a name…" autocomplete="off" required>
-      <button type="submit" class="btn btn--add">+ ADD</button>
-    </form>
-    <ul id="people-list" class="tag-list"></ul>
-  </section>
-
-  <div class="tear" aria-hidden="true"></div>
-
-  <section class="receipt__section" aria-labelledby="expense-heading">
-    <p class="receipt__label" id="expense-heading">ITEMS</p>
-    <form id="expense-form" class="expense-form">
-      <input id="expense-name" type="text" placeholder="What was it?" autocomplete="off" required>
-      <input id="expense-amount" type="number" step="0.01" min="0" placeholder="0.00" required>
-      <select id="expense-payer" required></select>
-      <button type="submit" class="btn btn--add">+ ADD ITEM</button>
-    </form>
-    <ul id="expense-list" class="expense-list"></ul>
-  </section>
-
-  <div class="tear" aria-hidden="true"></div>
-
-  <section class="receipt__section" aria-labelledby="total-heading">
-    <p class="receipt__label" id="total-heading">TOTAL</p>
-    <p class="receipt__total" id="total-amount">$0.00</p>
-    <p class="receipt__label" style="margin-top:1.25rem;">SETTLE UP</p>
-    <ul id="settle-list" class="settle-list">
-      <li class="settle-empty">Add people and items to see who owes what.</li>
-    </ul>
-  </section>
-
-  <footer class="receipt__foot">
-    <p>THANK YOU FOR SPLITTING FAIRLY</p>
-    <p class="receipt__snip">✂ - - - - - - - - - - - - - - - - - - - - - - - -</p>
-  </footer>
-</main>
-
-<script src="script.js"></script>
-</body>
-</html>
+<title>My Build Log</title>
+<style>
+  :root {
+    --paper: #f7f5f0;
+    --ink: #201f1c;
+    --ink-soft: #56524a;
+    --line: #d8d3c6;
+    --accent: #2f6b4f;
+    --mono: 'Courier New', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #3a3733;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+    font-family: var(--sans);
+    color: var(--ink);
+  }
+  main {
+    width: 100%;
+    max-width: 640px;
+    background: var(--paper);
+    padding: 2.5rem 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    border-radius: 4px;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+  }
+  h1 { font-size: 1.9rem; margin: 0 0 0.5rem; }
+  .intro { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.6; margin: 0 0 2rem; max-width: 50ch; }
+  .project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .project:last-child { border-bottom: 1px solid var(--line); }
+  .project-info h2 { font-size: 1.05rem; margin: 0 0 0.2rem; }
+  .project-info p { margin: 0; font-size: 0.85rem; color: var(--ink-soft); }
+  .status {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .status--live { background: var(--accent); color: #fff; }
+  .status--planned { background: #e3ded1; color: var(--ink-soft); }
+  a.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
